@@ -1,0 +1,24 @@
+# Core deep learning
+torch
+torchvision
+torchsummary
+
+# Data & image processing
+opencv-python
+Pillow
+pillow-heif          # HEIC (iPhone) image support
+numpy
+pandas
+split-folders        # train/val/test splitting
+
+# Machine learning tooling
+scikit-learn         # metrics, LabelEncoder, ROC/PRC
+hyperopt             # Bayesian Optimization (TPE)
+scipy                # z-score outlier filtering in BO analysis
+
+# Visualization
+matplotlib
+seaborn
+
+# (Notebook 6 / Colab inference) download models & data from Google Drive
+gdown

@@ -1,0 +1,35 @@
+# ─── Model weights (host via GitHub Releases / LFS — see models/README.md) ───
+*.pt
+*.pth
+*.keras
+*.onnx
+*.pkl
+# ...but keep the small BO trials object so notebook 6 is reproducible
+!results/final_bo.pkl
+
+# ─── Datasets (keep only data/sample/, ignore everything else under data/) ───
+data/*
+!data/README.md
+!data/sample/
+# generated augmentation output, wherever it lands
+**/*_Output/
+**/*_Split_Output/
+
+# ─── Python ───
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ─── Jupyter ───
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ─── OS / editor ───
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
