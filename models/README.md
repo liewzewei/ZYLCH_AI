@@ -1,14 +1,26 @@
 # Model weights
 
-The trained weights are **not stored in this git repository** because they are
-~100 MB each (GitHub blocks files over 100 MB, and large binaries bloat clones).
+The trained weights are **not stored in this git repository** because they exceed
+GitHub's 100 MB file limit (and large binaries bloat clones). They are published as
+a **[GitHub Release](https://github.com/liewzewei/ZYLCH_AI/releases/tag/v1.0)** instead.
 
-## Files
+## Download
 
-| File | Size | Description |
-|---|---|---|
-| `final_statedict.pt` | ~100 MB | **Recommended.** Final model weights (`state_dict`). Load into `CustomResNet`. |
-| `final_entire_model.pt` | ~100 MB | Whole pickled model object (needs the exact class + library versions to load). |
+**`final_statedict.pt`** (~100 MB) — the final model weights (PyTorch `state_dict`):
+
+**→ https://github.com/liewzewei/ZYLCH_AI/releases/download/v1.0/final_statedict.pt**
+
+Download it into this `models/` folder, e.g.:
+
+```bash
+# curl
+curl -L -o models/final_statedict.pt \
+  https://github.com/liewzewei/ZYLCH_AI/releases/download/v1.0/final_statedict.pt
+
+# or wget
+wget -O models/final_statedict.pt \
+  https://github.com/liewzewei/ZYLCH_AI/releases/download/v1.0/final_statedict.pt
+```
 
 ## How to load
 
@@ -27,12 +39,8 @@ Or run inference directly:
 python src/infer.py data/sample/ONDE_ONDE/*.jpg --weights models/final_statedict.pt
 ```
 
-## How to distribute the weights (pick one)
+## Note
 
-- **GitHub Releases (recommended):** attach `final_statedict.pt` to a release and
-  link it here. Release assets can be up to 2 GB and don't bloat the repo.
-- **Git LFS:** `git lfs track "*.pt"` if you want the weights versioned in-repo.
-- **Google Drive:** host the file and download it with `gdown` (this project's
-  Colab notebook already uses that approach).
-
-<!-- TODO: paste the download link here once the weights are hosted. -->
+The weights are hosted on the v1.0 GitHub Release above. If you retrain the model
+(`notebooks/4_train.ipynb`), it saves a fresh `models/final_statedict.pt` locally —
+that file is git-ignored, so it won't be committed.

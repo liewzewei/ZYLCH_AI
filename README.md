@@ -104,7 +104,11 @@ notebook — are in **[`docs/PROJECT_DOCUMENTATION.md`](docs/PROJECT_DOCUMENTATI
 conda create -n kuih python=3.10 && conda activate kuih
 pip install -r requirements.txt
 
-# 2. Get the weights (~100 MB, not in git — see models/README.md), then:
+# 2. Download the trained weights (~100 MB) from the v1.0 release:
+curl -L -o models/final_statedict.pt \
+  https://github.com/liewzewei/ZYLCH_AI/releases/download/v1.0/final_statedict.pt
+
+# 3. Predict:
 python src/infer.py data/sample/ONDE_ONDE/*.jpg --weights models/final_statedict.pt
 ```
 
